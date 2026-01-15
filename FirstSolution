@@ -1,0 +1,144 @@
+FirstSolution-Frontend/
+│
+├─ index.html
+├─ tools.html
+├─ dashboard.html
+├─ admin.html
+├─ pricing.html
+├─ about.html
+├─ legal/
+│   ├─ privacy.html
+│   ├─ terms.html
+│   ├─ dmca.html
+│   ├─ disclaimer.html
+│   └─ cookie.html
+├─ assets/
+│   ├─ logo.png          (placeholder image)
+│   └─ placeholder.jpg   (for tools/news thumbnails)
+├─ css/
+│   └─ style.css
+├─ js/
+│   ├─ main.js
+│   └─ tools.js
+└─ i18n/
+    ├─ bn.json
+    └─ en.json
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Solution | Digital Tools & Online Services</title>
+  <meta name="description" content="First Solution: Age, BMI, Currency Calculators, Word/PDF/Excel Tools, Internal Email, News & Educational Content.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <img src="assets/logo.png" alt="First Solution Logo" class="logo">
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="legal/privacy.html">Privacy</a></li>
+    </ul>
+    <button id="lang-toggle">BN/EN</button>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <h1>Welcome to First Solution</h1>
+    <p>Digital Tools, Calculators, Document Editor, Media Tools & More</p>
+  </section>
+  <section class="tools-preview">
+    <h2>Quick Tools</h2>
+    <div class="tool-boxes">
+      <div class="tool">Age Calculator</div>
+      <div class="tool">Word to PDF</div>
+      <div class="tool">PDF to Word</div>
+      <div class="tool">Image Editor</div>
+      <div class="tool">Video Compressor</div>
+    </div>
+  </section>
+  <section class="news-preview">
+    <h2>Latest News</h2>
+    <div id="news-container">
+      <!-- JS will populate news here -->
+    </div>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2026 First Solution. All rights reserved.</p>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
+header { background:#0a74da; color:#fff; display:flex; justify-content:space-between; align-items:center; padding:10px 20px; }
+header nav ul { list-style:none; display:flex; gap:15px; margin:0; padding:0; }
+header nav ul li a { color:#fff; text-decoration:none; }
+.logo { height:50px; }
+.hero { text-align:center; padding:50px 20px; background:#e0f3ff; }
+.tools-preview { text-align:center; padding:30px 20px; }
+.tool-boxes { display:flex; flex-wrap:wrap; justify-content:center; gap:15px; }
+.tool { background:#0a74da; color:#fff; padding:20px; border-radius:10px; cursor:pointer; transition:0.3s; }
+.tool:hover { background:#065a9d; }
+.news-preview { padding:30px 20px; text-align:center; }
+footer { text-align:center; padding:20px; background:#0a74da; color:#fff; }
+// Language Toggle
+const langToggle = document.getElementById('lang-toggle');
+let currentLang = 'en';
+langToggle.addEventListener('click', () => {
+  currentLang = currentLang === 'en' ? 'bn' : 'en';
+  alert('Language switched to ' + currentLang);
+});
+
+// Placeholder news content
+const newsContainer = document.getElementById('news-container');
+newsContainer.innerHTML = '<p>No news yet. Update via JS or API later.</p>';
+// Tools interaction placeholder
+document.querySelectorAll('.tool').forEach(tool => {
+  tool.addEventListener('click', () => {
+    alert('Tool clicked: ' + tool.textContent);
+  });
+});
+{
+  "home": "Home",
+  "tools": "Tools",
+  "dashboard": "Dashboard",
+  "pricing": "Pricing",
+  "about": "About",
+  "privacy": "Privacy",
+  "welcome": "Welcome to First Solution",
+  "tools_intro": "Digital Tools, Calculators, Document Editor, Media Tools & More"
+}
+{
+  "home": "হোম",
+  "tools": "টুলস",
+  "dashboard": "ড্যাশবোর্ড",
+  "pricing": "মূল্য নির্ধারণ",
+  "about": "আমাদের সম্পর্কে",
+  "privacy": "গোপনীয়তা",
+  "welcome": "ফার্স্ট সলিউশন এ স্বাগতম",
+  "tools_intro": "ডিজিটাল টুলস, ক্যালকুলেটর, ডকুমেন্ট এডিটর, মিডিয়া টুলস এবং আরও অনেক কিছু"
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | First Solution</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header><h1>Privacy Policy</h1></header>
+<main>
+  <p>First Solution respects your privacy. All personal data is secured and not shared with third parties.</p>
+</main>
+<footer>
+  <p>&copy; 2026 First Solution</p>
+</footer>
+</body>
+</html>
